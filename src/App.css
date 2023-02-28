@@ -14,6 +14,9 @@
   --section-header-font: 'Merriweather', serif;
 }
 
+body {
+  caret-color: transparent;
+}
 
 
 .App {
