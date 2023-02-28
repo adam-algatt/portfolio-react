@@ -1,5 +1,61 @@
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@500&family=Source+Sans+Pro:wght@300&display=swap');
+
+
+  :root {
+  --nav-theme-btn-size: 32px;
+  --nav-outercolor: #1F2022;
+  --nav-innercolor: #8C92AC;
+  --bg-darkmode:rgba(11, 12, 24, 0.1)
+  --bg-lightmode: rgba(89, 86, 77, 0.1)
+  --footer-bg-top: #3b3f3b;
+  --footer-bg-btm: #353935;
+  --footer-bg-top-light: #DEB3A9;
+  --footer-bg-btm-light: #D0B0A9;
+  --section-header-font: 'Merriweather', serif;
+}
+
+
+
 .App {
   text-align: center;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto 0 auto;
+}
+
+#dark {
+  background-color: var (--bg-darkmode);
+  /* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); */
+
+}
+
+#light {
+  background-color: var(--bg-lightmode);
+  /* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); */
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body> * {
+  /* background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png"); */
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  width: 100vw;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .App-logo {
@@ -32,7 +88,533 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+/*Nav Section Styling*/
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.nav-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 550;
+  height: 20px;
+  width: 20px;
+  color: #1F2022;
+}
+
+.open-btn {
+  position: fixed;
+  font-size: var(--nav-theme-btn-size);
+  top: 10px;
+  left: 10px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* tranform with translateX to bring inactive nav from off the screen 
+  then onto the screen if 'visible' is in the nav class */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav.visible {
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.nav-primary {
+  background-color: var(--nav-outercolor);
+  width: 60%;
+  max-width: 480px;
+  min-width: 320px;
+  transition-delay: 0.4s;
+}
+
+.nav-primary.visible {
+  transition-delay: 0s;
+}
+
+.nav-secondary {
+  background-color: var(--nav-innercolor);
+  width: 95%;
+  transition-delay: 0.2s;
+}
+
+.nav-secondary.visible {
+  transition-delay: 0.2s;
+}
+
+.nav-tertiary {
+  background-color: #fff;
+  width: 95%;
+  padding: 40px;
+  position: relative;
+  transition-delay: 0s;
+  caret-color: transparent;
+}
+
+.nav-tertiary.visible {
+  transition-delay: 0.4s;
+}
+
+.close-btn {
+  opacity: 0.5;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  color: black;
+  font-size: var(--nav-theme-btn-size);
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 13vh;
+
+}
+
+.list li {
+  margin: 20px 0;
+}
+
+.list li a:hover {
+ border-bottom: #1F2022 1px solid;
+}
+
+.list li:last-of-type {
+  margin-top: 5vh;
+}
+.list li a {
+  color: rgb(51, 51, 70);
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.list ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.theme-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  /* font-size: var(--nav-theme-btn-size); */
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 0;
+
+}
+
+.theme-icon {
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+
+/*Nav Section Styling End*/
+
+/*Article Styling Start*/
+
+.article {
+  padding: 10px 20px;
+  margin: 8vh auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  width: 95%;
+  z-index: 1;
+}
+
+.article h3 {
+  width: 100%;
+  font-size: 4em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 5vh;
+  color: rgb(51, 51, 70);
+  font-family: var(--section-header-font);
+}
+
+.divider {
+  margin-top: 7vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.divider img {
+  height: 20vh;
+}
+
+.article-img {
+  width: 75%;
+  margin: 3vh auto 7vh auto;
+}
+
+.article-text {
+  text-align: left;
+  margin: 0 auto 0 auto;
+  padding: 15px 15vw;
+  font-size: 1.55em;
+  font-weight: 650;
+  line-height: 1.85em;
+  letter-spacing: 2.25px;
+  max-width: 50%;
+}
+
+.hr-img {
+  margin: 10vh auto 2vh auto;
+}
+/*Begin Gallery Section Styling*/
+
+.card-container {
+  margin: 10vh 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: space-between;
+  justify-content: center;
+  width: 100%;
+  caret-color: transparent;
+
+}
+
+.card-container h2 {
+  width: 100%;
+  font-size: 2rem;
+}
+
+/*End Gallery Section Styling*/
+
+/*Card Projects Section*/
+
+#card-section-header{
+  font-size: 4em;
+  letter-spacing: 3px;
+  font-family: var(--section-header-font);
+  text-transform: uppercase;
+  color: rgb(51, 51, 70);
+}
+
+.card {
+  cursor: pointer;
+  margin: 15px 5px auto 5px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-grow: 1;
+  background-color: wheat;
+  text-align: center;
+  width: 23vw;
+  padding: 20px 25px;
+  border-radius: 7px;
+  height: fit-content;
+  opacity: 0.9;
+  flex: 0 0 auto;
+  font-family: roboto ;
+}
+
+.card h2 {
+  margin-bottom: 3rem;
+  cursor: default;
+  font-size: 2em;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+}
+
+.card p {
+  padding-top: 1.5 rem;
+  padding-bottom: 2.75rem;
+  line-height: 2;
+  letter-spacing: 1px;
+  position: relative;
+  cursor: default;
+  font-size: 20px;
+  text-align: left;
+}
+
+.card-hero {
+  cursor: default;
+  width: 100%;
+  height: 350px;
+  opacity: 1;
+}
+
+.tech-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  cursor: default;
+
+}
+
+.tech-container h3 {
+  width: 100%;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.button-container {
+  position: relative;
+  margin-top: 15px;
+}
+
+.tech-img {
+  margin: 30px 10px; 
+  border-radius: 50%;
+  max-width: 50px;
+  max-height: 50px;
+
+}
+
+.github {
+  margin-top: 3vh;
+  border-radius: 50%;
+  max-width: 50px;
+  max-height: 50px;
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+}
+
+.site-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: green;
+  color: honeydew;
+  letter-spacing: 2px;
+  font-weight: 750;
+  border: 1px solid lightblue;
+  cursor: pointer;
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+}
+
+.site-button:hover {
+  background-color: crimson;
+  padding: 15px 25px;
+}
+
+/*End Card Projects Section*/
+
+/* Footer Section */
+
+.footer-container {
+  caret-color: transparent;
+
+}
+
+.footer-top-row {
+  display: flex;
+  background-color: var(--footer-bg-top);
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 15vh;
+  color: white;
+  border-top: 1px solid whitesmoke;
+}
+
+footer-top-row-img-container a {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.footer-top-row.light {
+  background-color: var(--footer-bg-top-light);
+  color: black;
+}
+
+.footer-top-row img,
+h4 {
+  display: inline;
+}
+
+.footer-top-row-img-container {
+  border-radius: 50%;
+  background-color: white;
+  display: inline-block;
+  padding: 10px 12px;
+}
+
+.footer-top-row-img-container>* {
+  width: 25px;
+  height: 25px;
+}
+
+.footer-div {
+  margin: 0 auto 0 auto;
+}
+
+.footer-div a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: var(--footer-text-color)
+}
+
+.footer-bottom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  display: flex;
+  border-top: solid 1px black;
+  background-color: var(--footer-bg-btm);
+  color: var(--footer-text-color);
+  width: 100%;
+  height: 4vh;
+  padding: 10px 15px;
+}
+
+.footer-bottom-row.light,
+.footer-bottom-row.light p {
+  background-color: var(--footer-bg-btm-light);
+  color: black;
+}
+
+.footer-button {
+  background-color: transparent;
+  margin-right: 20px;
+  border: none;
+  padding: 5px 10px;
+  display: inline-flex;
+  border-radius: 5px;
+  color: var(--footer-text-color);
+}
+
+.footer-bottom-row p {
+  padding: 5px 10px;
+}
+
+.footer-button img {
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: -50px;
+}
+
+.footer-button:hover img {
+  background-color: whitesmoke;
+}
+
+.footer-button:target img {
+  padding: 10px 15px;
+
+}
+
+.footer-button p {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+ 
+  .hr-img {
+    display: none;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 70vw;
+  }
+
+  .footer-top-row {
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    height: fit-content;
+    padding: 2vh 0;
+  }
+
+  .footer-div {
+    width: 100%;
+    padding: 1vh 10vw;
+    margin-left: 30vw;
+    align-self: center;
+  }
+
+  .article-text {
+    text-align: justify;
+    margin: 0 auto 0 auto;
+    padding: 15px 5vw;
+    font-size: 1.55em;
+    font-weight: 650;
+    line-height: 1.85em;
+    letter-spacing: 2px;
+    max-width: 100%;
+  }
+
+  .article h3 {
+    font-size: calc(100vw/8); /*largest header is 8 characters, calc prevents wrapping on small screens*/
+  }
+
+  #card-section-header {
+    font-size: calc(100vw/8); /*largest header is 8 characters, calc prevents wrapping on small screens*/
+
+  }
+
+  .divider {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+.dark-divider {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+  .divider img {
+    margin-top: 3vh;
+  }
+  .nav nav-tertiary visible {
+    max-width: 95vw;
   }
 }
