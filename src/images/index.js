@@ -28,6 +28,7 @@ const images = {
   weightsDark: require('./weightsDarkTheme.svg').default,
   hikingLight: require('./hikingLight.svg').default,
   hikingDark: require('./hikingDark.svg').default,
+  wordle: require('./wordle.png')
 };
 
 export default images;

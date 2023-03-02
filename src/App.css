@@ -560,12 +560,14 @@ h4 {
   }
 
   .card-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .card {
     width: 70vw;
+    flex: 1; 
   }
 
   .footer-top-row {

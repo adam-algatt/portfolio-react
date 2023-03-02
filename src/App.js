@@ -51,9 +51,9 @@ function App() {
         
         <img className='hr-img' src={`${!darkTheme ? images.hr : images.hrDarkMode}`} alt='hr'/>  
 
-        <div className='card-container'>
+       
           <h2 id='card-section-header' style={{color: `${darkTheme ? 'white' : 'black'}`}}>Projects</h2>
-        
+          <div className='card-container'>
         {projects.map((proj, idx) => (
         <Card
           key={`prj-${idx}`}
