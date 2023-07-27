@@ -11,13 +11,18 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
   // state to hold card expansion status
   const [expanded, setExpanded] = useState([false, false, false, false]);
 
+images.map(image => {
+console.log(`${image}`);
+}); 
+
   const handleClick = (e) => {
+
     let clicked = e.target;
-    let clickedCard = e.currentTarget.id;
-        console.log(clicked)
+    let clickedCard = e.currentTarget.id[0];
+    // clickedCard = clickedCard.split('-')[0]
+        console.log('\n\n clicked-card\n\n', clickedCard)
     setExpanded(prev => {
       prev[clickedCard] = !prev[clickedCard];
-      clickedCard = ''; 
       return [...prev]
   })
 }
@@ -29,6 +34,10 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
     imgBoxShadow: '2px 2px 2px rgba(0, 0, 0, 0.7)',
   }
   
+
+  // expand simple site p tags or app description display: none
+
+  // until card is clicked then set dispaly auto 
   return (
     
       <motion.div className='card' 
@@ -40,7 +49,7 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
         <motion.img className='card-hero'src={projImg}
           style={{ boxShadow: style.imgBoxShadow, borderRadius: style.imgRadius }}
         ></motion.img>
-        {expanded[id] && (
+        {expanded[id[0]] && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -54,7 +63,6 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
                 return (
                 <motion.img
                 src={img}
-                key={`${img}-${Date.now()}`}
                 className="tech-img"
                 />
                 )

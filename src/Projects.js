@@ -40,16 +40,6 @@ export const projects = [
     id: 'vs2219', 
     buttonText: 'Git Repo',
     link: 'https://github.com/adam-algatt/ReadME-Plus'
-  },
-  {
-    title: "Wordle Clone",
-    description: "A clone of the wordle game",
-    longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium sunt deserunt hic exercitationem molestiae explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit.Accusantium sunt deserunt hic exercitationem molestiae explicabo?",
-    techUsed: [images.javascript, images.react],
-    img: images.wordle,
-    id: 'wc2023', 
-    buttonText: 'Live Site',
-    link: 'https://wordlee-clone.herokuapp.com/'
   }
 ];
 

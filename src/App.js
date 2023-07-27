@@ -1,19 +1,17 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import NavBar from './components/NavBar';
-import ArticleSection from './components/ArticleSection';
-import ThemeButton from './components/ThemeButton';
-import { projects } from './Projects'
-import Card from './components/Card';
-import Footer from './components/Footer';
 import images from './images';
+import { Route, Routes } from 'react-router-dom'
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Hobbies from './pages/Hobbies';
 export const ThemeContext = React.createContext();
 
 
 let scrollStyle = 10;
 
 function handleScroll() {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const changeScrollStyle = () => {
 
   }
@@ -33,7 +31,7 @@ function App() {
   const changeTheme = () => setDarkTheme(prevTheme => !prevTheme);
   
   const pageColor = () => {
-    darkTheme ? document.body.style.background = `url(${images.backgroundDark})` : document.body.style.background = `url(${images.backgroundLight})`;
+    darkTheme ? document.body.style.background = 'rgba(44, 53, 57,0.8)'/*`url(${images.backgroundDark})`*/ : document.body.style.background = 'rgba(240,248,255, 0.8)'//`url(${images.backgroundLight})`;
     document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundSize = 'cover';
   } 
@@ -43,35 +41,20 @@ function App() {
   }, [darkTheme])
   
   return (
+ 
     <ThemeContext.Provider value={darkTheme}>
       <div className='App' onScroll={handleScroll}>
-        <ThemeButton click={changeTheme} />
-        <NavBar buttonLocation={scrollStyle}/>
-        <ArticleSection />
-        
-        <img className='hr-img' src={`${!darkTheme ? images.hr : images.hrDarkMode}`} alt='hr'/>  
 
-       
-          <h2 id='card-section-header' style={{color: `${darkTheme ? 'white' : 'black'}`}}>Projects</h2>
-          <div className='card-container'>
-        {projects.map((proj, idx) => (
-        <Card
-          key={`prj-${idx}`}
-          id={idx}
-          title={proj.title}
-          description={proj.description}
-          images={proj.techUsed}
-          projImg={proj.img}
-          buttonText={proj.buttonText}
-          link={proj.link}
-          />
-    ))
-    }
-        
-        </div>
-        <Footer/>
+        <Routes>
+        <Route path='/' element={<About scrollStyle={scrollStyle} darkTheme={darkTheme} click={changeTheme}  />} /> 
+        <Route path='/projects' element={<Projects scrollStyle={scrollStyle} darkTheme={darkTheme} click={changeTheme} />} />
+        <Route path='/hobbies' element={<Hobbies scrollStyle={scrollStyle} darkTheme={darkTheme} click={changeTheme} />} />
+
+        </Routes>
+
       </div>
     </ThemeContext.Provider>
+
   );
 }
 

@@ -28,7 +28,13 @@ const images = {
   weightsDark: require('./weightsDarkTheme.svg').default,
   hikingLight: require('./hikingLight.svg').default,
   hikingDark: require('./hikingDark.svg').default,
-  wordle: require('./wordle.png')
+  projectHero: require('./projectPageHero.png'),
+  communication: require('./communication.png'),
+  teamwork: require('./teamwork.png'),
+  adaptability: require('./adapt.png'),
+  problemSolving: require('./problemSolving.png'),
+  hobbyHero: require('./hobbyHero.png'),
+
 };
 
 export default images;

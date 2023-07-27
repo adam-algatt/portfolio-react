@@ -13,7 +13,6 @@ const NavBar = (props) => {
 
   const themeStyles = {
     color: darkTheme ? '#fff' : '#333',
-    backgroundColor: darkTheme ? '' : '',
   }
   return (
     <>
@@ -33,6 +32,9 @@ const NavBar = (props) => {
             <ul className="list">
               <li><a href="https://docs.google.com/document/d/17H18r5NuuDFTxZ-qwWPikGPt4kziYtLF/edit">Resume</a></li>
               <li><a href="https://github.com/adam-algatt">GitHub</a></li>
+              <li><a href={`/`}>About</a></li>
+              <li><a href={`/projects`}>Projects</a></li>
+              <li><a href={`/hobbies`}>Hobbies</a></li>
             </ul>
           </div>
         </div>
