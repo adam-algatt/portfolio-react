@@ -12,7 +12,7 @@ const About = ({ scrollStyle, darkTheme, click}) => {
               {/* <ThemeButton click={changeTheme} /> */}
         <ArticleSection />
   
-   <Footer style={{marginTop: '3vh'}}/>
+   <Footer />
     </div>
   )
 }

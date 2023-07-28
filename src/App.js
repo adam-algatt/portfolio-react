@@ -27,18 +27,38 @@ function handleScroll() {
 }
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(false)
+  const [count, setCount] = useState(0)
   const changeTheme = () => setDarkTheme(prevTheme => !prevTheme);
   
-  const pageColor = () => {
+  const pageColor = (count) => {
+    let lsDarkTheme = localStorage.getItem('darkTheme')
+    //if it's the first render and there is an LS key 'darkTheme' setTheme to stored theme setting
+    if (count < 1 && lsDarkTheme !== null && JSON.parse(lsDarkTheme) !== darkTheme) changeTheme()
     darkTheme ? document.body.style.background = 'rgba(44, 53, 57,0.8)'/*`url(${images.backgroundDark})`*/ : document.body.style.background = 'rgba(240,248,255, 0.8)'//`url(${images.backgroundLight})`;
-    document.body.style.backgroundRepeat = 'no-repeat';
     document.body.style.backgroundSize = 'cover';
   } 
 
   useEffect(() => {
-    pageColor()  
+
+    if (count > 0 ) localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
+
+    let lsDarkTheme = localStorage.getItem('darkTheme')
+
+    // if (lsDarkTheme !== null && JSON.parse(lsDarkTheme) !== ) return setDarkTheme(prev => !prev)
+    // if (localStorage === null) return localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
+
+    // count = count++
   }, [darkTheme])
+
+  useEffect(() => {
+
+  pageColor(count)  
+  setCount (prev => prev + 1)
+  }, [darkTheme])
+
+  
+  
   
   return (
  

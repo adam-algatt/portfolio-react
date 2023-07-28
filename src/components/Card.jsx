@@ -11,10 +11,6 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
   // state to hold card expansion status
   const [expanded, setExpanded] = useState([false, false, false, false]);
 
-images.map(image => {
-console.log(`${image}`);
-}); 
-
   const handleClick = (e) => {
 
     let clicked = e.target;
