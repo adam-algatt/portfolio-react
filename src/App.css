@@ -12,20 +12,16 @@
     --section-header-font: 'Merriweather', serif;
   }
 
-   .transparent-container {
+  .transparent-container {
     margin: 3vh auto 0 auto;
 
-      padding: 5vw 7vw;
-      background:#86ccbc;
-      /* background:rgba(0,0,0,0.08); */
-     background:rgba(57,57,57,0.00);
-      border-radius: 15px;
-      z-index: 5;
-  } 
-
-
-
-
+    padding: 5vw 7vw;
+    background: #86ccbc;
+    /* background:rgba(0,0,0,0.08); */
+    background: rgba(57, 57, 57, 0.00);
+    border-radius: 15px;
+    z-index: 5;
+  }
 
   .App {
     text-align: center;
@@ -111,7 +107,7 @@
 
 
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: roboto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,6 +151,7 @@
   then onto the screen if 'visible' is in the nav class */
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 6;
   }
 
   .nav.visible {
@@ -270,6 +267,7 @@
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
+    justify-content: center;
     width: 95%;
     z-index: 1;
   }
@@ -311,27 +309,29 @@
     letter-spacing: 2.25px;
     max-width: 70ch;
   }
-  .skill-conatiner {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-family: roboto;
-  }
 
-  .skill-container {
-   width: 100%;
-  }
+
+
 
   .picture-wrapper {
-    position:relative;
+    position: relative;
     height: 800px;
     width: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: .5px solid black;
+    border-radius: 15px;
   }
+
+
   .picture-overlay {
-    background:rgba(57,57,57,0.5);
-      left: 0;
-      bottom: 0;
-      padding: 1rem;
+    background: rgba(57, 57, 57, 0.5);
+    left: 0;
+    bottom: 0;
+    padding: 1rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15pxm;
   }
 
   #skill-title {
@@ -344,8 +344,11 @@
     flex-direction: row;
     padding: 20px 35px;
     gap: 5%;
+    width: 100%;
     align-items: center;
     justify-content: center;
+    margin: 50px auto 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
 
   .skill-article p {
@@ -393,8 +396,9 @@
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: left;
     position: relative;
+    padding: 5px 7px;
 
   }
 
@@ -440,9 +444,10 @@
     color: rgb(51, 51, 70);
   }
 
-  .card > * {
+  .card>* {
     cursor: pointer;
   }
+
   .card {
     cursor: pointer;
     margin: 15px 5px auto 5px;
@@ -693,7 +698,6 @@
     .article-text {
       text-align: justify;
       margin: 0 auto 0 auto;
-      /* padding: 15px 5vw; */
       font-size: 1.55em;
       font-weight: 650;
       line-height: 1.85em;
@@ -729,4 +733,26 @@
     .nav nav-tertiary visible {
       max-width: 95vw;
     }
+
+    .skill-article {
+      display: flex;
+      flex-direction: column;
+      gap: 2%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .hero-img-container {
+      background-size: contain;
+      background-position: center;
+    }
+
+    /* add separation from like elements when display shifts to flex column */
+    .skill-article:nth-child(even) {
+      /* column reverse removes stagger on small screens */
+      flex-direction: column-reverse;
+    }
+
   }

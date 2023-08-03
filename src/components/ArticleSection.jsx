@@ -1,10 +1,10 @@
 import images from '../images/index';
 import '../App.css';
-import SoftSkills from './SoftSkills';
+import SoftSkills from './skills/SoftSkills';
 import React from 'react'
 import { ThemeContext } from '../App';
 import Divider from './Divider';
-import Skills from './Skills';
+import Skills from './skills/Skills';
 
 
 const heroStyle={
@@ -31,9 +31,8 @@ const ArticleSection = () => {
     <div className='article' style={themeStyles}>
     <h3 style={{color: `${themeStyles.color}`}}>About me</h3>
 
-  <div className='transparent-container'>
   <h3>  </h3>
-      <p className='article-text'>I'm a fullstack web developer who grew up in the Pacific Northwest. 
+      <p className='skill-article article-text' style={{marginTop: '-100px'}}>I'm a fullstack web developer who grew up in the Pacific Northwest. 
       I am most familiar with the MERN stack,   
       but I am a new developer who's very open to working with or learning any language required.
       Web develpment's lack of gate-keeping and 
@@ -44,8 +43,7 @@ const ArticleSection = () => {
       </div>
  
    <Skills themeStyles={themeStyles} />
-   <SoftSkills themeStyles={themeStyles}/>
-   </div>  
+   {/* <SoftSkills themeStyles={themeStyles}/> */}
 </>
 )
 }

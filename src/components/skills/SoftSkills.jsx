@@ -1,16 +1,15 @@
 import React from 'react'
-import images from '../images'
+import images from '../../images'
 
-const Skills = ({ themeStyles }) => {
 
-  //generates css background url prop for 600x800px article images
+
+const SoftSkills = ({themeStyles}) => {
+ 
   const genBgUrl = (imgPath) => {
-  const url =  {backgroundImage: "url(" + imgPath + ")"}
-    return  url 
-  }
-
+    const url =  {backgroundImage: "url(" + imgPath + ")"}
+      return  url 
+    }
   return (
-    <div className='transparent-container'>
     <div className='article' style={themeStyles}>
     <h3 style={{color: `${themeStyles.color}`}}> Skills (MERN)</h3>
     
@@ -20,10 +19,11 @@ const Skills = ({ themeStyles }) => {
 <div className='skill-article'>
 <p >MongoDB, Express, React, and Node.js(MERN)
 I am very familiar with the MERN stack.  </p>
-  <div className='picture-wrapper' style={genBgUrl(images.communication)}>
+  <div className='picture-wrapper' style={genBgUrl(images.adaptability)}>  
   <div className='picture-overlay'>
-  <h3 id='skill-title'>MERN</h3>
-  </div>  
+  <h3 id='skill-title'>Adaptability</h3>
+
+  </div>
 
   </div>
 
@@ -88,8 +88,7 @@ I am very familiar with the MERN stack.  </p>
 </div>
 
    </div>
-   </div>
   )
 }
 
-export default Skills
+export default SoftSkills

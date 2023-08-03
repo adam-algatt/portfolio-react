@@ -30,9 +30,9 @@ const images = {
   hikingDark: require('./hikingDark.svg').default,
   projectHero: require('./projectPageHero.png'),
   communication: require('./communication.png'),
-  teamwork: require('./teamwork.png'),
+  ['team work']: require('./teamwork.png'),
   adaptability: require('./adapt.png'),
-  problemSolving: require('./problemSolving.png'),
+  ['problem-solving']: require('./problemSolving.png'),
   hobbyHero: require('./hobbyHero.png'),
 
 };
