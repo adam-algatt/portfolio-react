@@ -1,6 +1,5 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import images from './images';
 import { Route, Routes } from 'react-router-dom'
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -43,12 +42,6 @@ function App() {
 
     if (count > 0 ) localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
 
-    let lsDarkTheme = localStorage.getItem('darkTheme')
-
-    // if (lsDarkTheme !== null && JSON.parse(lsDarkTheme) !== ) return setDarkTheme(prev => !prev)
-    // if (localStorage === null) return localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
-
-    // count = count++
   }, [darkTheme])
 
   useEffect(() => {
@@ -57,9 +50,6 @@ function App() {
   setCount (prev => prev + 1)
   }, [darkTheme])
 
-  
-  
-  
   return (
  
     <ThemeContext.Provider value={darkTheme}>

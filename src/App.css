@@ -12,6 +12,7 @@
     --section-header-font: 'Merriweather', serif;
   }
 
+
   .transparent-container {
     margin: 3vh auto 0 auto;
 
@@ -22,6 +23,7 @@
     border-radius: 15px;
     z-index: 5;
   }
+
 
   .App {
     text-align: center;
@@ -282,6 +284,12 @@
     font-family: var(--section-header-font);
   }
 
+  .article-spacer {
+     width: 100%;
+    font-size: 4em;
+    margin-top: 5vh;
+  }
+
   .divider {
     margin-top: 7vh;
     width: 100%;
@@ -331,7 +339,7 @@
     bottom: 0;
     padding: 1rem;
     border-top-left-radius: 15px;
-    border-top-right-radius: 15pxm;
+    border-top-right-radius: 15px;
   }
 
   #skill-title {
@@ -349,6 +357,7 @@
     justify-content: center;
     margin: 50px auto 0 auto;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 2vw;
   }
 
   .skill-article p {
@@ -756,3 +765,4 @@
     }
 
   }
+

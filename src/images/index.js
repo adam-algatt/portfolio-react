@@ -34,6 +34,7 @@ const images = {
   adaptability: require('./adapt.png'),
   ['problem-solving']: require('./problemSolving.png'),
   hobbyHero: require('./hobbyHero.png'),
+  wordle: require('./wordle.webp')
 
 };
 

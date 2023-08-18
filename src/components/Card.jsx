@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { motion, layout } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../App.css';
-import images from '../images/index';
 
-// second component to hold gallery tech used images
 
 // break down card to except props from parent
 // coming from projects object 
@@ -16,7 +14,6 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
     let clicked = e.target;
     let clickedCard = e.currentTarget.id[0];
     // clickedCard = clickedCard.split('-')[0]
-        console.log('\n\n clicked-card\n\n', clickedCard)
     setExpanded(prev => {
       prev[clickedCard] = !prev[clickedCard];
       return [...prev]
@@ -70,7 +67,7 @@ const Card = ({ title, description, images, id, projImg, buttonText, link }) => 
             </motion.p>
             <motion.div className='button-container'>
             <motion.a className='card-button'><motion.img className="github" src={images.github}></motion.img></motion.a>
-              <motion.a className='card-button' href={link}><motion.button className='site-button'>{buttonText}</motion.button></motion.a>
+              <motion.a className='card-button' href={link} target="_blank"><motion.button className='site-button'>{buttonText}</motion.button></motion.a>
             </motion.div>
           </motion.div>
         )}

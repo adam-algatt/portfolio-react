@@ -3,13 +3,13 @@ import images from "./images";
 
 export const projects = [
   {
-    title: "Open AI Images",
-    description: "Image application allowing user to query Open AI's for original AI created images",
-    techUsed: [images.javascript, images.node, images.express, images.react],
-    img: images.openAi,
+    title: "Wordle Clone",
+    description: "A wordle game clone using 5,000 words.",
+    techUsed: [images.javascript],
+    img: images.wordle,
     id: 'sl1912',
     buttonText: 'Live Site',
-    link: 'https://open-ai-images.herokuapp.com/'
+    link: 'https://wordlee-clone.herokuapp.com/'
   },
   {
     title: "Note Keeper",
